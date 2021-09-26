@@ -233,15 +233,111 @@ Para este ejercicio será necesario realizar dos funciones:
 ```scala
 
 ```
-### 
+### MiFuncion.hs, miFuncion2.hs y miFuncion2Nicolas.hs
+Esta función recibirá dos listas de numeros. En la primera tendremos una lista de números, cada valor de esta lista será sumado a cada uno de los elementos de la segunda. Finalmente, devolveremos todas las listas generadas. Para hacerlo de una forma sencilla usaremos la función _map_ de la clase _List_, que nos permite crear una nueva lista en función de una ya existente especificandole cambios
 ```scala
-
+def miFuncion(sumL :List[Int], numL :List[Int]): List[List[Int]] = {
+    if(sumL.size == numL.size){
+        for(i <- sumL)
+            yield numL.map { j => j + i}
+    }else
+        List(List())
+}
 ```
-### 
+### MiXor.hs
+Implemente una puerta Xor en scala
 ```scala
-
+def miXor(a :Boolean, b :Boolean): Boolean = {
+    if(a == b)
+        false
+    else 
+        true
+}
 ```
-### 
+### Predecesor.hs
+Devuelve el número anterior al valor _n_ pasado por parámetro
 ```scala
+def predecesor(n :Int): Int = {
+    n - 1
+}
+```
+### Prog1.hs 
+Devuelve true si el numero es positivo y false en caso contrario
+```scala
+def noNegativo(n :Int): Boolean = {
+    if(n >= 0)
+        true
+    else
+        false
+}
+```
+### ProgramaTuplas.hs
+Devuelve todas las listas que contienen el objeto _a_
+```scala
+def programaTuplas(l :List[List[Any]], a :Any): List[Any] = {
+    for(i <- l if l.contains(a))
+        yield i
+}
+```
+### QuitaBlanco.hs y quitaBlanco2.hs
+Elimina todos los espacios presentes en una variable de tipo String
+```scala
+def quitaBlanco(s :String ): String = {
+    for(i <- s if i != ' ')
+        yield i
+}
+```
+### SecondElem.hs
+Devuelve el segundo elemento de una lista
+```scala
+def secondElem(l :List[Any]): Any = {
+    if(l.size > 1)
+        l.apply(1)
+    else
+        null
+}
+```
 
+### SoloPrimero.hs
+La función devuelve el primer elemento de una lista
+```scala
+def soloPrimero(l :List[Any]): Any = {
+    l.head
+}
+```
+
+### Suma.hs
+Realiza y devuelve la suma de dos números pasados por parámetro
+```scala
+def suma(a :Int, b :Int): Int = {
+    a+b
+}
+```
+
+### Suma3.hs
+Realiza y devuelve la suma de tres números pasados por parámetro
+```scala
+def suma3(a :Int, b :Int, c :Int): Int = {
+     a+b+c
+}
+```
+
+### Suma_lista.hs
+Suma todo los elementos de una lista de números
+```scala
+def sumaLista(l :List[Int]): Int = {
+    l.sum
+}
+```
+### Traduce.hs
+Convierte un número en un carácter. Para ello usaremos la función match, que es el equivalente a la función switch en otros lenguajes de programación
+```scala
+def traduce(n :Int): String = {
+    n match {
+        case 1 => "A"
+        case 2 => "B"
+        case 3 => "C"
+        case _ => "X"
+    }
+}
 ```
