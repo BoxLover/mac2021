@@ -169,6 +169,78 @@ def funcionLista(l :List[Any]): Any = {
     }
 }
 ```
+### FuncionTupla.hs
+En este ejercicio hacemos uso de las funciones pasadas por parámetros. Para el ejercicio en cuestión, cada una de las funciones calculará un valor respecto de _n_. Después, dicha suma será el valor de retorno de la función
+```scala
+def funcionTupla(funcionA :Int => Int, funcionB :Int => Int, n :Int): Int = {
+    funcionA(n) + funcionB(n)
+}
+```
+### FuncionTuplaBool.hs
+Al igual que en el ejercicios anterior, ahora tenemos dos funciones pasadas por parámetro. En esta ocasión, cada una recibira un objeto de tipo _Any_ (que en este caso será _a_) y devolverá un boolean. Si una de las dos funciones devuelve _true_ la función devolvera dicho valor, en caso contrario devolverá _false_
+```scala
+def funcionTupla(funcionA :Any => Boolean, funcionB :Any => Boolean, a :Any): Boolean = {
+    (funcionA(a) || funcionB(a))
+}
+```
+### Funcion_hash_ricadro.hs
+Para este ejercicio será necesario realizar dos funciones:
+* funcionHash - Devuelve la suma de valores producto de multiplicar cada valor de la lista _l_ correspondiente con su posición en la lista de primos
+* calculaPrimos - Calcula los números primos existentes entre 0 y _n_
+```scala
+def funcionHash(l :List[Int]): Int = {
+    if(l.size > 0){
+        var sum = 0
+        val listaPrimos = calculaPrimos(l.size)
+        val numberRange = List.range(0, l.size - 1)
+        for( i <- numberRange ){
+            sum += l(i) * listaPrimos(i)
+        }
+        sum
+    }else
+        -1
+}
+
+def calculaPrimos(n :Int): List[Int] = {
+    var i = 0
+    var lista : List[Int] = List()
+    while(i < n){
+        if(primo(i))
+            lista ::= i
+    
+        i = i+1    
+    }
+    lista
+}
+```
+### Integral.hs y integral_manuel_jesus.hs
+
+```scala
+
+```
+### Lambda.hs
+En esta función haremos uso de los valores implicitos. De esta forma, el complidor de scala se encargará de buscar el valor que falte de la suma que calculamos en la función
+```scala
+def funcionLambda[A](a :A, b :A)(implicit r: Numeric[A]): A = {
+    import r._
+    a+b
+}
+```
+### Mapea_y_filtra_ricardo_diaz.hs y solucion_pregunta_map.hs
+Para este ejercicio será necesario realizar dos funciones:
+ * mapea -
+ * filtra -
+```scala
+
+```
+### 
+```scala
+
+```
+### 
+```scala
+
+```
 ### 
 ```scala
 
